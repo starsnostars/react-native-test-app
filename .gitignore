@@ -22,6 +22,13 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+# VS Code
+.vscode-test/
+.vscode/.react/debuggerWorker.js
+.vscode/.react/index.android.bundle
+.vscode/.react/index.android.map
+.vscode/.react/.vscode/launchReactNative.js
+
 # Android/IntelliJ
 #
 build/
