@@ -1,35 +1,17 @@
-import React from 'react';
-import {StyleSheet, View, Text} from 'react-native'
+import React, { Component } from 'react';
+import { View, Button} from 'react-native'
 
-export interface Props {
-    text: String
-}
-
-export interface State {
-    text: String
-}
-
-export class HelloWorld extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        this.state = { text: props.text }
-    }
-
+export class HelloWorld extends Component {
     render() {
         return(
             <View>
-                <Text>{this.state.text}</Text>
+                <Button title="Go to to do list"
+                        onPress={()=> {
+                            this.props.navigation.navigate("ToDo", {
+                                url: "http://jsonplaceholder.typicode.com/todos/"
+                            })
+                        }}/>
             </View>
         );
-    }
-
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({text: "NEW STATE"})
-        }, 3000);
-    }
-
-    shouldComponentUpdate(prevProps: Props, prevState: State) {
-        return true
     }
 }

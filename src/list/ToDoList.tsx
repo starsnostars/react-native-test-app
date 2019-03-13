@@ -13,7 +13,7 @@ export class ToDoList extends Component<Props, ToDoListState> {
   constructor(props: Props) {
     super(props);
     this.state = { items: [] };
-    this.listUrl = props.url;
+    this.listUrl = props.navigation.getParam("url", "");
   }
 
   render() {
